@@ -11,7 +11,7 @@ COPY . .
 
 RUN cargo build --release -bin rust_blog_mvc
 
-FROM debian:bullyseye-slim
+FROM debian:bullseye-slim
 
 RUN apt-get update && apt-get install -y \
     ca-certificates \
