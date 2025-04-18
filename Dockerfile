@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN cargo build --release -bin rust_blog_mvc
+RUN cargo build --release --bin rust_blog_mvc
 
 FROM debian:bullseye-slim
 
