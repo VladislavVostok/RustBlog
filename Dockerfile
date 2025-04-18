@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN cargo build --release --bin rust_blog_mvc
+RUN cargo build --release --bin wtf-sec-blog
 
 FROM debian:bullseye-slim
 
@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/list/*
 
 
-COPY --from=builder /usr/src/app/target/release/rust_blog_mvc /usr/local/bin
+COPY --from=builder /usr/src/app/target/release/wtf-sec-blog /usr/local/bin
 COPY --from=builder /usr/src/app/migrations /migrations
 
 ENV DATABASE_URL=mysql://admin:shalom***@mysql/blog_db
